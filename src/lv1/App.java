@@ -12,13 +12,13 @@ public class App {
             int n1 = sc.nextInt();
             if (n1 < 0) {
                 System.out.println("0 또는 자연수만 입력 가능합니다.");
-                return;
+                continue;
             }
             System.out.print("두 번째 숫자를 입력하세요: ");
             int n2 = sc.nextInt();
             if (n2 < 0) {
                 System.out.println("0 또는 자연수만 입력 가능합니다.");
-                return;
+                continue;
             }
             System.out.print("연산자를 입력하세요: ");
             char operator = sc.next().charAt(0);

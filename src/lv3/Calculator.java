@@ -1,4 +1,4 @@
-package lv2;
+package lv3;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -19,7 +19,7 @@ public class Calculator {
         result_queue.add(result);
 
         return result;
-    }
+}
 
     public void setResult_queue(double n1) {
         result_queue.add(n1);
