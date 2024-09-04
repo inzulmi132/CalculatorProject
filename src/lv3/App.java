@@ -1,6 +1,7 @@
-package lv2;
+package lv3;
 
-import java.util.*;
+import java.util.Objects;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -10,23 +11,11 @@ public class App {
         for(String flag = ""; !Objects.equals(flag, "exit"); flag = sc.nextLine()) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int n1 = sc.nextInt();
-            if (n1 < 0) {
-                System.out.println("0 또는 자연수만 입력 가능합니다.");
-                continue;
-            }
             System.out.print("두 번째 숫자를 입력하세요: ");
             int n2 = sc.nextInt();
-            if (n2 < 0) {
-                System.out.println("0 또는 자연수만 입력 가능합니다.");
-                continue;
-            }
             System.out.print("연산 기호를 입력하세요: ");
             char operator = sc.next().charAt(0);
             sc.nextLine();
-
-
-
-
 
             if(operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%') {
                 System.out.println("정상적인 연산자가 아닙니다.");
