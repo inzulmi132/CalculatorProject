@@ -1,24 +1,15 @@
 package lv3;
 
-enum OperatorType {
-    Plus('+'),
-    Minus('-'),
-    Multiply('*'),
-    Divide('/'),
-    Mod('%')
-    ;
-    private char type;
+import java.util.Objects;
 
-    OperatorType(char type) {
-        this.type = type;
-    }
-    public void setType(char type) {
-        this.type = type;
-    }
-    public char getType() {
-        return type;
-    }
-}
+public class ArithmeticCalculator<T> {
+    OperatorType operatorType;
 
-public class ArithmeticCalculator {
+    public void setOperatorType(char type) {
+        this.operatorType.setType(type);
+    }
+    public char getOperatorType() {
+        return operatorType.getType();
+    }
+
 }
