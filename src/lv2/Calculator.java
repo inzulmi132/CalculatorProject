@@ -27,16 +27,16 @@ public class Calculator {
     public double getResult_queue() {
         if(result_queue.isEmpty())
         {
-            System.out.println("queue is empty");
+            System.out.println("저장된 연산 결과가 없습니다.");
             return 0;
         }
         return result_queue.peek();
     }
     public void removeResult() {
         if(result_queue.isEmpty()) {
-            System.out.println("queue is empty");
+            System.out.println("저장된 연산 결과가 없습니다.");
             return;
         }
-        System.out.println(result_queue.poll() + " 삭제");
+        System.out.println(result_queue.poll() + " 삭제 되었습니다.");
     }
 }

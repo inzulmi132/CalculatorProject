@@ -8,13 +8,13 @@ public class App {
         Calculator calculator = new Calculator();
         String flag = "";
         while(!Objects.equals(flag, "exit")) {
-            System.out.print("첫 번째 숫자를 입력하세요: ");
+            System.out.print("첫 번째 수를 입력하세요: ");
             int n1 = sc.nextInt();
             if (n1 < 0) {
                 System.out.println("0 또는 자연수만 입력 가능합니다.");
                 continue;
             }
-            System.out.print("두 번째 숫자를 입력하세요: ");
+            System.out.print("두 번째 수를 입력하세요: ");
             int n2 = sc.nextInt();
             if (n2 < 0) {
                 System.out.println("0 또는 자연수만 입력 가능합니다.");
@@ -34,7 +34,8 @@ public class App {
                 System.out.println("연산 결과: " + calculator.calculate(n1, n2, operator));
             }
 
-            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, delete 입력 시 계산 결과 삭제)");
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            System.out.println("delete 입력 시 가장 먼저 연산한 결과가 삭제됩니다.");
             flag = sc.nextLine();
             if(flag.equals("delete")) {
                 calculator.removeResult();

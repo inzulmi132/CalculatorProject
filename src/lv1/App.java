@@ -8,13 +8,13 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         for(String flag = ""; !Objects.equals(flag, "exit"); flag = sc.nextLine()) {
-            System.out.print("첫 번째 숫자를 입력하세요: ");
+            System.out.print("첫 번째 수를 입력하세요: ");
             int n1 = sc.nextInt();
             if (n1 < 0) {
                 System.out.println("0 또는 자연수만 입력 가능합니다.");
                 continue;
             }
-            System.out.print("두 번째 숫자를 입력하세요: ");
+            System.out.print("두 번째 수를 입력하세요: ");
             int n2 = sc.nextInt();
             if (n2 < 0) {
                 System.out.println("0 또는 자연수만 입력 가능합니다.");
