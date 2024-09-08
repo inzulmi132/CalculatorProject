@@ -6,8 +6,8 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
-
-        for(String flag = ""; !Objects.equals(flag, "exit"); flag = sc.nextLine()) {
+        String flag = "";
+        while(!Objects.equals(flag, "exit")) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int n1 = sc.nextInt();
             if (n1 < 0) {
@@ -24,10 +24,6 @@ public class App {
             char operator = sc.next().charAt(0);
             sc.nextLine();
 
-
-
-
-
             if(operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%') {
                 System.out.println("정상적인 연산자가 아닙니다.");
             }
@@ -38,7 +34,11 @@ public class App {
                 System.out.println("연산 결과: " + calculator.calculate(n1, n2, operator));
             }
 
-            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, delete 입력 시 계산 결과 삭제)");
+            flag = sc.nextLine();
+            if(flag.equals("delete")) {
+                calculator.removeResult();
+            }
         }
     }
 }

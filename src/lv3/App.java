@@ -9,7 +9,7 @@ public class App {
         ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>();
 
         for(String flag = ""; !Objects.equals(flag, "exit"); flag = sc.nextLine()) {
-            System.out.print("첫 번째 숫자를 입력하세요: ");
+            System.out.print("첫2 번째 숫자를 입력하세요: ");
             Double n1 = sc.nextDouble();
             System.out.print("두 번째 숫자를 입력하세요: ");
             Double n2 = sc.nextDouble();

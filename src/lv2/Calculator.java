@@ -33,6 +33,10 @@ public class Calculator {
         return result_queue.peek();
     }
     public void removeResult() {
-        result_queue.poll();
+        if(result_queue.isEmpty()) {
+            System.out.println("queue is empty");
+            return;
+        }
+        System.out.println(result_queue.poll() + " 삭제");
     }
 }
