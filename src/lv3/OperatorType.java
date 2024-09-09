@@ -1,13 +1,11 @@
 package lv3;
 
-import java.util.function.BiFunction;
-
 public enum OperatorType {
     Add('+'),
     Substract('-'),
     Multiply('*'),
     Divide('/'),
-    Remaind('%'),
+    Remaind('%')
     ;
     private char operator;
 
