@@ -1,4 +1,4 @@
-package lv3;
+package Lv3;
 
 import java.util.Objects;
 import java.util.Scanner;

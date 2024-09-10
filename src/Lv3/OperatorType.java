@@ -1,4 +1,4 @@
-package lv3;
+package Lv3;
 
 public enum OperatorType {
     Add('+'),

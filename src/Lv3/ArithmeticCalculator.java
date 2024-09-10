@@ -1,9 +1,9 @@
-package lv3;
+package Lv3;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import static lv3.OperatorType.*;
+import static Lv3.OperatorType.*;
 
 public class ArithmeticCalculator<T extends Number> {
     OperatorType operatorType;
