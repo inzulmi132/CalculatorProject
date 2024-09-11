@@ -10,12 +10,6 @@ public class ArithmeticCalculator<T extends Number> {
     Queue<T> result_queue = new LinkedList<>();
 
     public void calculate(T n1, T n2) {
-        // 정상적이지 않은 연산자인 경우 예외 처리
-        if(operatorType == null) {
-            System.out.println("정상적인 연산자가 아닙니다.");
-            return;
-        }
-
         // 0으로 나누는 경우 예외 처리
         if((this.operatorType == Divide || this.operatorType == Remaind) && n2.doubleValue() == 0) {
             System.out.println("0으로 나눌 수 없습니다.");
