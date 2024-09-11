@@ -4,27 +4,21 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class App {
+public class AppInt {
     private static final String OPERATION_REG = "[+\\-*/%]";
-    private static final String DOUBLE_REG = "^[0-9]*.?[0-9]*$";
-    private static final String INT_REG = "^[0-9]*$";
+    private static final String INT_REG = "^-?[0-9]*$";
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // 제네릭 클래스인 arithmeticcalculator를 Double로 선언
-//        ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<>();
+        // 제네릭 클래스인 arithmeticcalculator를 Integer로 선언
         ArithmeticCalculator<Integer> arithmeticCalculator = new ArithmeticCalculator<>();
         String flag = "";
-        String input = "";
+        String input;
 
         while(!Objects.equals(flag, "exit")) {
             try {
                 System.out.print("첫 번째 수를 입력하세요: ");
                 input = sc.nextLine();
-//                if(!Pattern.matches(DOUBLE_REG, input)) {
-//                    throw new Exception("잘못된 입력입니다. 실수를 입력하세요.");
-//                }
-//                Double n1 = Double.valueOf(input);
                 if(!Pattern.matches(INT_REG, input)) {
                     throw new Exception("잘못된 입력입니다. 정수를 입력하세요.");
                 }
@@ -39,21 +33,18 @@ public class App {
 
                 System.out.print("두 번째 수를 입력하세요: ");
                 input = sc.nextLine();
-//                if(!Pattern.matches(DOUBLE_REG, input)) {
-//                    throw new Exception("잘못된 입력입니다. 실수를 입력하세요.");
-//                }
-//                Double n2 = Double.valueOf(input);
                 if(!Pattern.matches(INT_REG, input)) {
                     throw new Exception("잘못된 입력입니다. 정수를 입력하세요.");
                 }
                 Integer n2 = Integer.valueOf(input);
 
+                // 0으로 나누는 경우 예외 처리
                 if((operator == '/' || operator == '%') && n2 == 0) {
                     throw new Exception("0으로 나눌 수 없습니다.");
                 }
                 // arithmeticcalculator를 이용하여 연산자를 저장하고 연산
                 arithmeticCalculator.setOperatorType(operator);
-                arithmeticCalculator.calculate(n1, n2);
+                System.out.println("연산 결과: " + arithmeticCalculator.calculate(n1, n2));
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             }
@@ -65,7 +56,6 @@ public class App {
             // scan을 입력하면 기준이 되는 수보다 값이 큰 연산 결과들을 모두 출력
             if(flag.equals("scan")) {
                 System.out.print("출력 기준이 될 수를 입력하세요: ");
-//                arithmeticCalculator.display(sc.nextDouble());
                 arithmeticCalculator.display(sc.nextInt());
                 sc.nextLine();
             }
