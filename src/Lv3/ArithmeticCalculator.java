@@ -7,15 +7,9 @@ import static Lv3.OperatorType.*;
 
 public class ArithmeticCalculator<T extends Number> {
     OperatorType operatorType;
-    Queue<T> result_queue = new LinkedList<>();
+    Queue<Double> result_queue = new LinkedList<>();
 
-    public void calculate(T n1, T n2) {
-        // 0으로 나누는 경우 예외 처리
-        if((this.operatorType == Divide || this.operatorType == Remaind) && n2.doubleValue() == 0) {
-            System.out.println("0으로 나눌 수 없습니다.");
-            return;
-        }
-
+    public double calculate(T n1, T n2) {
         double result = n1.doubleValue();
         switch (this.operatorType) {
             case Add:       result += n2.doubleValue(); break;
@@ -24,10 +18,10 @@ public class ArithmeticCalculator<T extends Number> {
             case Divide:    result /= n2.doubleValue(); break;
             case Remaind:   result %= n2.doubleValue(); break;
         }
-        System.out.println("연산 결과: " + result);
 
         // 연산 결과를 다시 제네릭으로 바꿔서 컬렉션에 저장
-        result_queue.add((T)(Double)result);
+        result_queue.add(result);
+        return result;
     }
 
     public void display(T n) {
@@ -39,7 +33,7 @@ public class ArithmeticCalculator<T extends Number> {
 
         // 스트림을 이용하여 컬렉션에서 입력받은 값보다 값들만 출력
         result_queue.stream()
-                .filter(t -> t.doubleValue() > n.doubleValue())
+                .filter(t -> t > n.doubleValue())
                 .forEach(t -> System.out.print(t + " "));
         System.out.println();
     }
